@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function area(width, height){
+				height = height || width;
+				return width * height
+			}
+			console.log(area(2,3))
+			console.log(area(2))
+			
+			function foreach(){
+				let aa = [1, 2, 3, 4, 5];
+				aa.forEach(function(a, i){
+					console.log(`${a} ${i}`)
+			    })
+				for (let s of aa) {
+					console.log(`${s}`)
+				}
+				for (let j = 0; j < aa.length; j+=1) {
+					console.log(aa[j])
+				}
+			}
+			foreach()
+			
+			var bb = '我爱马书苹';
+			console.log(bb.split(''));
+			console.log(bb.split('').join(''));
+			
+			var cc = ['sd','sad','rg','dfds'];
+			cc.some(function (name){
+				return name.endsWith('d')
+			})
+
+			function map(){
+				const aaa = ['马','书','苹','我','爱','你'];
+				console.log(aaa.map((a) => a.repeat(3)))
+				console.log(aaa.map((item, index) => item + '~').join(''))
+				console.log(aaa.map((a) => {
+					return a + '`'
+				}).join(''))
+			}
+			map()
+			
+			function max(){
+				// sum
+				let aa = [1, 2, 3, 4, 5];
+				console.log(aa.reduce((acc, cur) => acc + cur))
+				// max
+				console.log(aa.reduce((acc, cur) => max > cur ? max : cur))
+				
+			}
+			max()
+			
+			function sx(year) {
+			  var sxs = ["🐭", "🐮", "🐯", "🐰", "🐲", "🐍", "🐴", "🐑", "🐵", "🐔", "🐶", "🐷"];
+			  var aa = sxs.splice(8,4)
+			  var bb = aa.concat(sxs)
+			  console.log(bb[(year % 12)])
+			}
+			sx(2020)
+			
+			function plusOne(digits) {
+				console.log(((+digits.join('') + 1) + '').split(''))
+			}
+			plusOne([1,2,3,4])
+			
+			function sort(array){
+				console.log(array.sort((a, b) => (b - a)))
+			}
+			sort([3,5,1,9,0])
+			
+			var s = '前不见古人';
+			(function() {
+			  console.log(s)
+			  
+			  var s = '后不见来者'
+			})();
+			
+			function count(){
+			    for(var i=1; i<6; i++){
+					run(i)
+			    }
+			}
+			function run(index){
+				setTimeout(function(){
+					console.log(index)
+				},index*1000)
+			}
+			count()
+			
+			Array(5).map((i) => {
+				setTimeout(function(){
+					console.log(i)
+				},i*1000)
+			})
+		</script>
+	</body>
+</html>

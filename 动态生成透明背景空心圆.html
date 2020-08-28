@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>动态生成透明背景空心圆</title>
+		<style>
+			*, *::after, *::before {
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+			}
+
+			.container {
+				display: flex;
+				justify-content: space-around;
+				margin-top: 100px;
+				width: 100vw;
+			}
+
+			.box {
+				align-items: center;
+				border: 1px solid #f00;
+				display: flex;
+				height: 500px;
+				justify-content: center;
+				width: 500px;
+			}
+
+			.box2:hover {
+				cursor: pointer;
+			}
+
+			.circle {
+				display: flex;
+				height: 300px;
+				width: 300px;
+			}
+
+			.left, .right {
+				height: 100%;
+				overflow: hidden;
+				width: 50%;
+			}
+
+			.left::after, .right::after {
+				border: 7px solid;
+				border-radius: 50%;
+				border-bottom-color: transparent;
+				border-right-color: transparent;
+				content: '';
+				display: block;
+				height: 300px;
+				width: 300px;
+			}
+
+			.left::after {
+				animation: leftCircle 1s 1s linear 1 forwards;
+				transform: rotate(135deg);
+			}
+
+			.right::after {
+				animation: rightCircle 1s linear 1 forwards;
+				transform: translateX(-50%) rotate(-45deg);
+			}
+
+			@keyframes leftCircle {
+				0% {}
+				100% {transform: rotate(315deg);}
+			}
+
+			@keyframes rightCircle {
+				0% {}
+				100% {transform: translateX(-50%) rotate(135deg);}
+			}
+		</style>
+	</head>
+	<body>
+		<h1>动态生成透明背景空心圆</h1>
+
+		<div class="container">
+			<div class="box">
+				<div class="circle">
+					<div class="left"></div>
+					<div class="right"></div>
+				</div>
+			</div>
+			<div class="box box2">
+			</div>
+		</div>
+		<script>
+			class Circle {
+				constructor(dom) {
+					this.dom = dom
+				}
+
+				render() {
+					this.dom.addEventListener('click', function() {
+						this.innerHTML = `<div class="circle">
+											<div class="left"></div>
+											<div class="right"></div>
+										</div>`
+					})
+				}
+			}
+
+			new Circle(document.querySelector('.box2')).render()
+		</script>
+	</body>
+</html>

@@ -1,0 +1,103 @@
+html {
+  background: #f8f8f8;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+h1 {
+  padding: 1rem 0;
+  font-size: 2rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+.user {
+  display: flex;
+}
+
+.info {
+  flex: 1;
+  margin-left: 1.5rem;
+}
+
+.info .item {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.repos {
+  margin-top: 1rem;
+  padding-bottom: 5rem;
+}
+
+.panel-repo, .panel-heading.repo {
+  background: #fff;
+}
+
+
+.panel-repo .star-count {
+  margin-left: auto;
+  margin-right: 8px;
+}
+
+.avatar {
+  width: 280px;
+  height: 280px;
+  display: block;
+}
+
+@media (max-width: 450px) {
+  .avatar {
+    width: 120px;
+    height: 120px;
+  }
+  .avatar + .info {
+    margin-left: .5rem;
+  }
+  .avatar + .info .item:last-child {
+    border-bottom: 0;
+  }
+}
+
+.container {
+  max-width: 680px;
+}
+
+.user-input {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#history {
+  right: 0;
+  bottom: 0;
+  width: 200px;
+  min-height: 360px;
+  position: fixed;
+  display: none;
+  border: 1px solid #ddd;
+  border-right: 0;
+}
+
+.view-history {
+  top: 5px;
+  right: 0;
+  font-size: 14px;
+  position: absolute;
+}
+
+@media (max-width: 450px) { 
+  #history {
+    width: 100%;
+    height: 260px;
+  }
+  .view-history {
+    right: 10px;
+  }
+}

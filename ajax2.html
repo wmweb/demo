@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style type="text/css">
+			img {
+				width: 100px;
+				height: auto;
+				display: block;
+			}
+			#list {
+				display: flex;
+				justify-content: space-around;
+				flex-wrap: wrap;
+			}
+			li {
+				flex-basis: 25%;
+			}
+			p {
+				display: block;
+				width: 100%;
+				text-align: center;
+				color: #0088CC;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="ul">
+			<ul id="list">
+			</ul>
+			<button type="button" id="button">加载</button>
+		</div>
+		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script type="text/javascript">
+			let page = 1;
+			$.getJSON('https://octocats.now.sh/api/octocats?page=5&pageSize=12', function(res) {
+				let html = '';
+				res.data.map(function(item) {
+					html += `<li><img src="${item.image}"><p>${item.name}</p></li>`;
+				})
+				$("#list").html(html);
+			})
+			
+			$('#button').on('click',function() {
+				page += 1;
+				$.getJSON('https://octocats.now.sh/api/octocats?page=${page}&pageSize=12', function(res) {
+					let html = '';
+					res.data.map(function(item) {
+						html += `<li><img src="${item.image}"><p>${item.name}</p></li>`;
+					})
+					$("#list").append(html)
+				})
+			})
+		</script>
+	</body>
+</html>

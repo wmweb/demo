@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style type="text/css">
+			img {
+				width: 100px;
+				height: auto;
+				display: block;
+			}
+			#list {
+				display: flex;
+				justify-content: space-around;
+				flex-wrap: wrap;
+			}
+			span {
+				display: block;
+				width: 100%;
+				text-align: center;
+				color: #0088CC;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<ul id="list">
+			</ul>
+		</div>
+		<script type="text/javascript">
+			const url = 'https://octocats.now.sh/api/octocats?page=5&pageSize=12';
+			let xhr = new XMLHttpRequest;
+			xhr.responseType = 'json';
+			xhr.addEventListener('load', function() {
+				let html = '';
+				const d = this.response.data;  
+				d.map((item) => {
+					html += `<li><img src="${item.image}" /><span>${item.name}</span></li>`;
+				})
+				document.querySelector('#list').innerHTML = html
+			})
+			xhr.open('GET', url)
+			xhr.send()
+		</script>
+	</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<style type="text/css">
+			/* .nihao:nth-last-of-type(odd) {
+				background-color: #0088CC;
+			}
+			.nihao:nth-last-of-type(even) {
+				background-color: orangered;
+			}
+			#add {
+				background-color: black;
+			} */
+			/* [data-color=origin]:nth-last-of-type(odd) {
+				background-color: #0088CC;
+			}
+			[data-color=origin]:nth-last-of-type(even) {
+				background-color: orangered;
+			} */
+			.demo p.nihao {
+				background-color: orangered;
+			}
+			[data-color=origin] {
+				background-color: #0088CC!important;
+			}
+		</style>
+		<div class="demo"></div>
+		<script type="text/javascript">
+			let content = '',
+				p1 = "<p class='nihao' data-color='origin'>今天的一切挣扎都是为了明天积蓄力量，不放弃</p>";
+				p2 = "<p class='nihao'>今天的一切挣扎都是为了明天积蓄力量，不放弃</p>";
+			for(let i=0;i<10;i++) {
+				if(i%2 == 0) {
+					content += p1;
+				}else{
+					content += p2;
+				}
+			}
+			document.getElementsByClassName('demo')[0].innerHTML = content;
+			var para = document.createElement("p");
+			para.setAttribute('id', 'add');
+			var node = document.createTextNode("这是一个新段落。");
+			para.appendChild(node);
+			var first = document.getElementsByClassName('nihao')[0];
+			var flag = false;
+			document.body.addEventListener('click',function(){
+				flag = !flag;
+				if(flag) {
+					document.getElementsByClassName('demo')[0].insertBefore(para, first);
+				}else{
+					document.getElementsByClassName('demo')[0].removeChild(para);
+				}
+			})
+		</script>
+	</body>
+</html>

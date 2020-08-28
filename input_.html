@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<div><input type="checkbox" name="cn" id="cn" value="" /><label for="cn">中国</label></div>
+		<div><input type="checkbox" name="usa" id="usa" value="" /><label for="usa">美国</label></div>
+		<div><input type="checkbox" name="en" id="en" value="" /><label for="en">英国</label></div>
+		<p></p>
+		<script type="text/javascript">
+			const p = document.querySelector('p');
+			let sel = [];
+			document.addEventListener('input', (e) => {
+				// let lable = e.target.parentNode.querySelector('label').innerText;
+				// if(e.target.checked){
+				// 	sel.push(lable)
+				// }else{
+				// 	sel.map((item, index) => {
+				// 		if(item == lable){
+				// 			sel.splice(index, 1)
+				// 		}
+				// 	})
+				// }
+				const inputs = Array.from(document.querySelectorAll('input:checked+label')).map((item) => item.innerText)
+				const len = document.querySelectorAll('input').length - inputs.length
+				p.innerText = '您现在选中' + inputs.length + '个国家，分别是' + inputs.join(',') + (len ? '还有' + len + '个没选' : '')
+				// inputs.forEach((e) => {
+				// 	p.innerText += '，' + e.innerText
+				// })
+			})
+		</script>
+	</body>
+</html>

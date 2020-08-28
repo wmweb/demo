@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>便签</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="../css/notebook.css"/>
+		<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	</head>
+	<body>
+		<div id="app">
+			<div class="main-view">
+				<div class="notes-view">
+					<header>
+						<i class="fa fa-edit"></i>
+						便签
+						<i class="fa fa-gear"></i>
+					</header>
+					<div class="notes">
+						
+					</div>
+					<div class="add-note">
+					  <i class="fa fa-plus"></i>
+					</div>
+				</div>
+				<div class="settings-view">
+					<header>
+						<i class="fa fa-edit"></i>
+						设置
+						<i class="fa fa-bars"></i>
+					</header>
+				</div>
+			</div>
+			<div class="note-view">
+				<header>
+					<i class="fa fa-angle-left nav-btn-back"></i>
+					详情
+					<i class="fa fa-trash nav-btn-trash"></i>
+				</header>
+				<div class="content">
+					<textarea class="editor"></textarea>
+				</div>
+			</div>
+		</div>
+		<script src="javascripts/notebook.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

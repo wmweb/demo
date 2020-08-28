@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      #wrapper {
+        width: 500px;
+        height: 100px;
+        border: 1px solid #000;
+        margin: 100px auto;
+        /* overflow: hidden; */
+      }
+      ul {
+        padding: 0;
+        margin: 0;
+        
+      }
+      li {
+        cursor: default;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn">点击添加一个li</button>
+    <div id="wrapper">
+      <ul>
+        <li>我是第1个</li>
+        <li>我是第2个</li>
+        <li>我是第3个</li>
+        <li>我是第4个</li>
+        <li>我是第5个</li>
+        <li>我是第6个</li>
+        <li>我是第7个</li>
+        <li>我是第8个</li>
+        <li>我是第9个</li>
+        <li>我是第10个</li>
+        <li>我是第11个</li>
+        <li>我是第12个</li>
+        <li>我是第13个</li>
+        <li>我是第14个</li>
+        <li>我是第15个</li>
+        <li>我是第16个</li>
+        <li>我是第17个</li>
+        <li>我是第18个</li>
+        <li>我是第19个</li>
+        <li>我是第20个</li>
+      </ul>
+    </div>
+    <script src="/javascripts/iscroll.js"></script>
+    <script>
+      const myScroll = new IScroll("#wrapper", {
+        mouseWheel: true, // 开启鼠标滚轮支持
+        scrollbars: "custom" // 开启滚动条支持
+      });
+      document.querySelector("#btn").onclick = () => {
+        let li = document.createElement("li");
+        li.innerText = "我是新增的li";
+        document.querySelector("#wrapper>ul").appendChild(li);
+        // 动态添加数据后 刷新iscroll
+        myScroll.refresh();
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,122 @@
+﻿option 选项
+sorter 从事分类
+widget 窗口小部件
+valid  有效的
+fadein 淡入
+fadeout 淡出
+slidedown 向下滑动
+slideup 向上滑动
+chaining 链接
+append  追加
+insert  插入
+handling 处理
+query  查询
+attribute 属性
+inspect 检验
+refrence 参考
+wrap  包
+exception 例外
+node 节点
+storage 存储
+param 参数
+
+align  排列
+condensed 浓缩
+responsive 响应的
+overflow 溢出
+label 标签
+checkbox 多选框
+radio 单选框
+multiple 多个的
+justify 辩解 
+justified 充满 调整
+thumbnail 缩略图
+muted  减弱的
+caret  插入符号（倒三角小按钮）
+invisible 看不见的
+inherit 继承
+initial 最初的; 开始的; 首字母的;
+vertical 垂直
+horizontal 水平的
+mixin 混入
+filter 过滤
+opacity 不透明度
+Placeholder 占位符
+toggle 切换
+vertical 垂直的
+horizontal 水平的
+Split 分开
+inverse 相反的
+collapse 折叠
+static  静止的
+breadcrumb 面包屑
+badge 徽章
+thumbnail 缩略图
+caption 字幕 标题 说明文字
+striped 条纹状
+pane 窗格 方框
+fade in 渐变
+manual 用手的;手制的，手工的;手册
+trigger 触发 引发
+panel 面板
+carousel  轮播 
+indicator 指示器
+thead 表头
+Indicator 指示器 图片容器
+interval 间隔
+status 状态
+wrapper 包装纸; 封套; 封皮
+portal 入口 门户
+slider 滑块
+transparent 透明
+infinite 无限的
+animation 动画片制作
+box-shadow 阴影
+parser 剖析器
+attachment 附件，附属物
+
+linear-gradient(线性渐变)
+radial-gradient(径向渐变)
+
+async 异步
+loop 回路
+hint 暗示
+Notation 标记法 表示法
+prompt 提示符
+application 某种技术、系统或者产品的应用
+response 反应; 回答，答复
+
+
+widget 小器具，装饰品，窗口小部件
+helper 库
+gradients  渐变
+angle 角
+circle 圆
+ellipse 椭圆形
+radial 径向的; 辐射状的
+linear 线性的
+inset 插入物，插进;
+overflow 溢出
+wrap 包
+transform 变换; 改变; 改观
+translate 转换，转移位置
+rotate 旋转
+transition 过渡
+animation  动画制作
+duration 持续时间
+justify  证明…有理; 为…辩护; 对…作出解释
+align  使成一线，使结盟; 排整齐
+stretch  伸展; 延伸; 持续; 包括
+canvas  帆布; 油画（布）
+Scalable Vector Graphics 可伸缩 矢量 图形
+drag 拖拽
+track 字幕
+section 部分; 节; 部件; 部门;
+aside  在旁边，在一边
+Storage 贮存; 贮藏; 储藏处
+session  一段时间
+
+discard 丢弃，抛弃;
+remote 远程的
+previous 以前的
+

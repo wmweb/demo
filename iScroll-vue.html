@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      #lists {
+        width: 400px;
+        height: 80px;
+        border: 1px solid #000;
+        margin-top: 20px;
+      }
+      #lists > ul {
+        padding: 0;
+        margin: 0;
+      }
+      #lists>ul>li{
+          cursor: default;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <input type="text" name="" id="" v-model="liStr" @keyup.enter="addList" />
+      <div id="lists" ref="wrapper">
+        <ul>
+          <li v-for="(item, index) in arrList" :key="index">{{ item }}</li>
+        </ul>
+      </div>
+    </div>
+    <script src="/javascripts/iscroll.js"></script>
+    <script src="/javascripts/vue.js"></script>
+    <script>
+      const vm = new Vue({
+        el: "#app",
+        data: {
+          liStr: "",
+          arrList: [
+            "我是第1个li",
+            "我是第2个li",
+            "我是第3个li",
+            "我是第4个li",
+            "我是第5个li",
+            "我是第6个li",
+            "我是第7个li",
+            "我是第8个li",
+            "我是第9个li",
+            "我是第10个li"
+          ],
+          // iscorll 实例对象
+          myScroll: undefined
+        },
+        methods: {
+          addList() {
+            this.arrList.push(this.liStr);
+            this.liStr = "";
+          }
+        },
+        // data数据全部挂载 加载iScroll
+        mounted() {
+          this.myScroll = new IScroll(this.$refs.wrapper, {
+            mouseWheel: true, // 开启鼠标滚轮支持
+            scrollbars: "custom" // 开启滚动条支持
+          });
+        },
+        // 数据更新 重新刷新iScroll 计算高度
+        updated() {
+          this.myScroll.refresh();
+        }
+      });
+    </script>
+  </body>
+</html>
