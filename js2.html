@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			(function() {
+			  // 按照 tasks 的顺序和等待时间 wait 执行任务
+			  var tasks = [
+			    { name: '出场 😀', wait: 2 },
+			    { name: '隐身 🤡', wait: 3 },
+			    { name: '放大 😎', wait: 5 }
+			  ]
+			  var i;
+			  for (i = 0; i < tasks.length; i++) {
+			    run(i)
+			  }
+			  
+			  function run(index){
+				  setTimeout(function() {
+				    console.log('执行任务 ' + tasks[index].name)  // 程序报错 Cannot read property 'name' of undefined
+				  }, tasks[index].wait * 1000)
+			  }
+			  
+			  console.log(i)  // i 在整个函数作用域内可见
+			})()
+			
+			function countTo(n) {
+			  for (let i = 1; i <= n; i++) {
+			    setTimeout(function() {
+			      console.log(i)
+			    }, (i - 1) * 1000)
+			  }
+			}
+			
+			countTo(5)
+		</script>
+	</body>
+</html>

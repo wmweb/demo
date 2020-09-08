@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<a href="http://baidu.com" target="_self">_self</a>
+		<a href="http://baidu.com" target="_parent">_parent</a>
+		<a href="http://baidu.com" target="_blank">_blank</a>
+		<a href="http://baidu.com" target="_top">_top</a>
+		<a href="http://baidu.com" target="iframe">iframe</a>
+		<iframe src="http://baidu.com" name="iframe"></iframe>
+		<div class="form">
+			<form action="/getInfo" method="post">
+				<div class="username">
+					<label for="username">姓名</label>
+					<input type="text" name="username" id="username" value="" placeholder="输入姓名"/>
+				</div>
+				<div class="sex">
+					<label>男</label><input type="radio" name="sex" value="男"/>
+					<label>女</label><input type="radio" name="sex" value="女"/>
+				</div>
+				<div class="checkbox">
+					<label>北京</label><input type="checkbox" name="address" value="beijing" checked />
+					<label>南京</label><input type="checkbox" name="address" value="nanjing"/>
+					<label>上海</label><input type="checkbox" name="address" value="shanghai"/>
+				</div>
+				<div class="file">
+					<input type="file" name="myfile" accept="image/png"/>
+				</div>
+				<div class="select">
+					<select name="select">
+						<option value="beijing">北京</option>
+						<option value="nanjing" selected>南京</option>
+						<option value="shanghai">上海</option>
+					</select>
+				</div>
+				<input type="text" name="abc" id="" placeholder="用户名" maxlength="10" required />
+				<input type="button" name="" id="" value="Button" />
+				<input type="submit" name="" id="" value="Submit" />
+				<input type="reset" name="" id="" value="Reset" />
+				<input type="hidden" name="csrf" id="" value="wda5sda632e31w23" />
+				<div class="submit">
+					<button>提交</button>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>

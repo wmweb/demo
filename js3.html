@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<style type="text/css">
+			#circle{width:200px;height: 200px;background: #FFA500;}
+		</style>
+		<div id="circle"></div>
+		<div id="timer1">
+			10
+		</div>
+		<div id="timer2">
+			10
+		</div>
+		<div id="timeout">
+			
+		</div>
+		<script type="text/javascript">
+			const c = document.querySelector('#circle');
+			c.style.transition = '1s'
+			c.style.transform = 'scale(0)'
+			setTimeout(() => {c.style.transform = 'scale(1)'})
+			const t1 = document.querySelector('#timer1')
+			const t2 = document.querySelector('#timer2')
+			let time1 = 10.000
+			let time2 = 11
+			setInterval(function(){
+				if(time1 <= 0) return
+				time1 = ((time1 - 0.01).toFixed(3))
+				t1.innerText = time1
+			}, 10)
+			setTimeout(run(), 1000)
+			function run(){
+				if(time2 <= 0 ) return
+				time2--
+				t2.innerText = time2
+				setTimeout(run, 1000)
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			const aa = [
+				{
+					children: [
+						{
+							id: 4
+						},
+						{
+							children: [
+								{
+									id: 5
+								}
+							]
+						}
+					],
+				},
+				{
+					id: 1
+				},
+				{
+					id: 2
+				},
+				{
+					id: 3
+				}
+			]
+			bb = [...aa]
+			
+			function daquan(a, _i){
+				a.map((item, i) => { //遍历数组
+					let index = i
+					if(_i){
+						index = _i + i
+						item._index = _i + i
+					}else{
+						item._index = '' + i
+					}
+					for (let p in item) {	//每个对象
+						if(item[p] instanceof Array) { //数组
+							let _i = index + '-'
+							daquan(item[p], _i)
+						}
+					}
+				})
+			}
+			function arrayCopy(a){
+				daquan(a)
+				console.log(a)
+			}
+			arrayCopy(aa)
+			
+			function getNodeBy_index(i){
+				
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div><input type="checkbox" name="" id="" value="" /><label>中国</label></div>
+		<div><input type="checkbox" name="" id="" value="" /><label>美国</label></div>
+		<div><input type="checkbox" name="" id="" value="" /><label>英国</label></div>
+		<script type="text/javascript">
+			// document.addEventListener('input', () => {
+			// 	document.querySelectorAll('input').forEach((e) => {
+			// 		if(e.checked){
+			// 			console.log(e.parentNode.querySelector('label').innerText)
+			// 		}
+			// 	})
+			// })
+			document.addEventListener('input', (e) => {
+				console.log(e.target.parentNode.querySelector('label').innerText)
+			})
+		</script>
+	</body>
+</html>

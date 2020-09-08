@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<style type="text/css">
+			*{padding: 0;margin: 0;}
+			ul{display: flex;justify-content: space-between; width: 80%;margin: 0 auto;flex-wrap: wrap;}
+			li{width: 24%;background: #FFA500;margin: 20px 0;height: 50px;list-style: none;flex-direction: column;}
+			
+			/* 第一种 */
+			/* li:last-child:nth-child(4n - 2) {
+			    margin-right: calc(48% + 4% / 3 * 2);
+			} */
+			/* 第二种 */
+			/* li:last-child{margin-right:auto;} */
+			/* 第三种 */
+			ul::after{
+			  height: 0;
+			  width: 49.3%;/*（48% + 4% / 3）*/
+			  content: "";
+			}
+		</style>
+	</body>
+</html>
